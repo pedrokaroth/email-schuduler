@@ -1,7 +1,6 @@
 const AWS = require('aws-sdk')
 
-// TODO: Alterar para validar stage da aplicacao
-if (true) {
+if (process.env.IS_LOCAL) {
   AWS.config.update({
     credentials: {
       accessKeyId: 'test',
