@@ -5,6 +5,13 @@ frameworkVersion: '3'
 provider:
   name: aws
   runtime: nodejs14.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - events:PutRule
+        - events:PutTargets
+        - events:ListRules
+      Resource: "*"
 
 custom:
   localstack:
