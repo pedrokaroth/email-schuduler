@@ -11,6 +11,7 @@ provider:
         - events:PutRule
         - events:PutTargets
         - events:ListRules
+        - lambda:InvokeFunction
       Resource: "*"
 
 custom:
