@@ -28,7 +28,18 @@ class Handler {
   }
 
   // TODO: funcao que vai solicitar o disparo do email
-  saveSchedule = async () => {
+  saveSchedule = async (event) => {
+    const request = JSON.parse(event.body)
+
+    if (!request.schedule || !request.email || !request.mensagem) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          mensagem: 'Parametros faltantes'
+        })
+      }
+    }
+
     const time = moment().utc().add(1, 'minute')
 
     const ruleTmpName = randomUUID()
