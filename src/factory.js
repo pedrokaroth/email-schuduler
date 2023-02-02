@@ -1,6 +1,8 @@
+// TODO Corrigir DP de factory do AWS
+
 const AWS = require('aws-sdk')
 
-if (process.env.IS_LOCAL) {
+if (process.env.IS_OFFLINE) {
   AWS.config.update({
     credentials: {
       accessKeyId: 'test',
